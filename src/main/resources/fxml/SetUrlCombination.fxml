@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.fofaviewer.controllers.SetUrlCombinationController">
+    <content>
+        <VBox prefWidth="1000" prefHeight="500" spacing="20">
+            <TabPane>
+                <Tab fx:id="urlComb" closable="false" text="组合语法">
+                    <GridPane alignment="CENTER" vgap="15.0D" hgap="6.0D">
+                        <padding><Insets right="10.0D" left="10.0D" top="10.0D"/></padding>
+
+<!--                            <RowConstraints prefHeight="20" />-->
+
+                        <!-- 导入基础语法 -->
+                        <Label fx:id="import_file_name" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                        <Button fx:id="importFofaApiFile" GridPane.columnIndex="1" GridPane.rowIndex="0" text="导入" onAction="#importFofaApiFile" GridPane.valignment="CENTER" />
+                        <Label fx:id="fofaApiFilePathLabel" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+
+                        <!-- 导入组合语法 -->
+                        <Label fx:id="import_file_name_comb" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <Button fx:id="importFofaEmailFile" GridPane.columnIndex="1" GridPane.rowIndex="1" text="导入" onAction="#importFofaEmailFile" GridPane.valignment="CENTER" />
+                        <Label fx:id="fofaEmailFilePathLabel" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+
+                        <!-- web协议复选框 -->
+                        <CheckBox fx:id="webProtocolCheckbox" text="web协议" selected="true" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <!-- 大陆地区复选框 -->
+                        <CheckBox fx:id="mainlandRegionCheckbox" text="大陆地区" selected="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <!-- 禁止部分hash复选框 -->
+                        <CheckBox fx:id="forbiddenHashCheckbox" text="禁止部分hash" selected="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <!-- 路由器防火墙等复选框 -->
+                        <CheckBox fx:id="routerFirewallCheckbox" text="路由器防火墙等" selected="true" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                        <!-- 生成按钮 -->
+                        <Button fx:id="generateButton" text="生成" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#generateCombination" GridPane.valignment="CENTER" />
+                        <!-- 取消按钮 -->
+                        <Button fx:id="cancelButton" text="取消" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#cancel" GridPane.valignment="CENTER" />
+                    </GridPane>
+                </Tab>
+
+                <!-- 提取率检测 -->
+                <Tab fx:id="extraction" closable="false" text="提取率检测">
+                    <VBox alignment="CENTER" spacing="15.0D">
+                        <!-- 初始语法输入框 -->
+                        <HBox spacing="5">
+                            <Label text="初始语法:" />
+                            <TextField fx:id="initialSyntaxField" prefWidth="400" />
+                            <Button fx:id="detectionButton" text="查询" onAction="#performDetection"/>
+                            <Label fx:id="fofa_size" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+                        </HBox>
+
+                        <!-- 数字展示 -->
+                        <HBox spacing="5">
+                            <Label text="组合语法生成内容:"/>
+                            <Button fx:id="importUrlFileButton" text="导入" onAction="#importUrlFile"/>
+                            <Label fx:id="urlFileLineCountLabel"/>
+                        </HBox>
+
+                        <!-- 百分比展示 -->
+                        <HBox spacing="5">
+                            <Label text="覆盖率:" />
+                            <Label fx:id="percentageLabel" />
+                        </HBox>
+                    </VBox>
+                </Tab>
+
+
+            </TabPane>
+        </VBox>
+    </content>
+</DialogPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.fofaviewer.controls.CloseableTabPane?>
+<?import org.controlsfx.control.textfield.TextFields?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<VBox fx:id="rootLayout" fx:controller="org.fofaviewer.controllers.MainController" prefHeight="700" prefWidth="1100" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <MenuBar prefHeight="0.0" prefWidth="106.0" VBox.vgrow="NEVER">
+        <Menu fx:id="help" mnemonicParsing="false">
+<!--            <MenuItem fx:id="query_api" mnemonicParsing="false" onAction="#getQueryAPI"/>-->
+            <MenuItem fx:id="about" mnemonicParsing="false" onAction="#showAbout"/>
+        </Menu>
+        <Menu fx:id="config" mnemonicParsing="false">
+            <MenuItem fx:id="setConfig" mnemonicParsing="false" onAction="#setConfig"/>
+        </Menu>
+        <Menu fx:id="project" mnemonicParsing="false">
+            <MenuItem fx:id="saveProject" mnemonicParsing="false" onAction="#saveProject"/>
+            <MenuItem fx:id="openProject" mnemonicParsing="false" onAction="#openProject"/>
+        </Menu>
+
+        <Menu fx:id="urlFunction" mnemonicParsing="false">
+            <MenuItem fx:id="importFile" mnemonicParsing="false" onAction="#importTxt"/>
+<!--            <MenuItem fx:id="startOn" mnemonicParsing="false" onAction="#startUrl"/>-->
+        </Menu>
+
+
+        <Menu fx:id="urlCombination" mnemonicParsing="false">
+            <MenuItem fx:id="urlCsettings" mnemonicParsing="false" onAction="#urlSettings"/>
+        </Menu>
+        <Menu fx:id="awvs" mnemonicParsing="false">
+            <MenuItem fx:id="awvsTran" mnemonicParsing="false" onAction="#awvsTrans"/>
+        </Menu>
+
+        <Menu fx:id="urlslice" mnemonicParsing="false">
+            <MenuItem fx:id="urlslicein" mnemonicParsing="false" onAction="#urlslicefunc"/>
+        </Menu>
+
+        <Menu fx:id="no_repeat" mnemonicParsing="false">
+<!--            <MenuItem fx:id="importFile" mnemonicParsing="false" onAction="#importTxt"/>-->
+            <MenuItem fx:id="no_repeat_id" mnemonicParsing="false" onAction="#no_repeat_func"/>
+        </Menu>
+
+
+<!--        <Menu fx:id="rule" mnemonicParsing="false">-->
+<!--            <MenuItem fx:id="createRule" mnemonicParsing="false" onAction="#createRule"/>-->
+<!--            <MenuItem fx:id="exportRule" mnemonicParsing="false" onAction="#exportRule"/>-->
+<!--        </Menu>-->
+    </MenuBar>
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <AnchorPane prefHeight="600" prefWidth="1100" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <HBox spacing="10.0D" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="280">
+                <padding><Insets top="12" right="22" left="22"/></padding>
+                <Label fx:id="queryString" alignment="CENTER">
+                    <HBox.margin><Insets top="4"/></HBox.margin>
+                    <font><Font size="14.0"/></font>
+                </Label>
+                <TextFields HBox.hgrow="ALWAYS" fx:factory="createClearableTextField" fx:id="queryTF" prefHeight="27.0" prefWidth="400" />
+
+                <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#queryAction"/>
+            </HBox>
+
+<!--            <Button fx:id="exportAll" AnchorPane.rightAnchor="10.0" layoutY="10" mnemonicParsing="false" alignment="CENTER_RIGHT" onAction="#exportAll"/>-->
+            <Button fx:id="exportAll" AnchorPane.rightAnchor="115.0" layoutY="10" mnemonicParsing="false" alignment="CENTER_RIGHT" onAction="#exportAll"/>
+
+
+            <Button fx:id="exportDataBtn" AnchorPane.rightAnchor="10.0" layoutY="10" mnemonicParsing="false" alignment="CENTER_RIGHT" onAction="#exportAction"/>
+
+            <HBox spacing="10.0D" AnchorPane.leftAnchor="22" AnchorPane.topAnchor="50">
+<!--                <CheckBox fx:id="checkHoneyPot" mnemonicParsing="false">-->
+<!--                    <HBox.margin><Insets top="4" /></HBox.margin>-->
+<!--                    <font><Font size="14.0"/></font>-->
+<!--                </CheckBox>-->
+                <CheckBox fx:id="isAll" mnemonicParsing="false">
+                    <HBox.margin><Insets top="4"/></HBox.margin>
+                    <font><Font size="14.0"/></font>
+                </CheckBox>
+<!--                <CheckBox fx:id="withFid" mnemonicParsing="false">-->
+<!--                    <HBox.margin><Insets top="4"/></HBox.margin>-->
+<!--                    <font><Font size="14.0"/></font>-->
+<!--                </CheckBox>-->
+
+<!--                <CheckBox fx:id="hostOnly" mnemonicParsing="false" selected="true">-->
+<!--                    <HBox.margin><Insets top="4"/></HBox.margin>-->
+<!--                    <font><Font size="14.0"/></font>-->
+<!--                </CheckBox>-->
+
+
+<!--                <CheckBox fx:id="title">-->
+<!--                    <HBox.margin><Insets top="4"/></HBox.margin>-->
+<!--                    <font><Font size="14.0"/></font>-->
+<!--                </CheckBox>-->
+<!--                <CheckBox fx:id="cert">-->
+<!--                    <HBox.margin><Insets top="4"/></HBox.margin>-->
+<!--                    <font><Font size="14.0"/></font>-->
+<!--                </CheckBox>-->
+            </HBox>
+        </AnchorPane>
+        <CloseableTabPane fx:id="tabPane" prefHeight="560" prefWidth="1000" AnchorPane.topAnchor="86" AnchorPane.rightAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
+    </AnchorPane>
+</VBox>
