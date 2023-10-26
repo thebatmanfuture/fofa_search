@@ -181,6 +181,12 @@ copy *.txt hhhhhhhhhhhh.txt
 
 # 四、感谢各位师傅的支持
 
+## 致谢
+
+Fofa_Search 已加入 [FOFA 共创者计划](https://fofa.info/development)，感谢 FOFA 提供的账号支持。
+
+![fofa-logo](https://user-images.githubusercontent.com/40891670/209631625-f73811b0-a26a-4a42-8158-e5061464481d.png)
+
 ## Stargazers
 
 [![Stargazers repo roster for @thebatmanfuture/fofa_search](https://reporoster.com/stars/thebatmanfuture/fofa_search)](https://github.com/thebatmanfuture/fofa_search/stargazers)
