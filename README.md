@@ -10,6 +10,12 @@
 
 工具下载地址：[https://github.com/thebatmanfuture/fofa_search/releases](https://github.com/thebatmanfuture/fofa_search/releases)
 
+**关于学习交流以及问题的解决**
+
+![微信群](./WeChat.jpg)
+
+如果微信群已满200人，请加微信号 `chunshangchunshu_` 邀请入群即可
+
 # 二、TODO
 
 相比于 `fofa_viewer` ，本工具新增以下十余种功能：
